@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div><h1>Bipolar Logistic Regression Model</h1></div>
+    <div>In each box, input a statistic that you would like to test</div>
+    <div>You don't need to fill in every box, only the ones you would like to use for the model</div>
+    <div>Do not input any words or % symbols, numbers and decimals only</div>
+    <br>
+    <form method="post">
+    <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'Tab1')">Team Stats</button>
+        <button class="tablinks" onclick="openTab(event, 'Tab2')">Opposition Stats</button>
+        <button class="tablinks" onclick="openTab(event, 'Tab3')">Stat Differential</button>
+      </div>
+      
+      <div id="Tab1" class="tabcontent">
+        <p>Team Stats- The stats that your team gets</p>
+        <div>
+          <label for="points">Points Scored:</label>
+          <input type="text" id="points" name="points">
+        </div>
+        <div>
+            <label for="possessions">Possesions:</label>
+            <input type="text" id="possessions" name="possessions">
+        </div>
+        <div>
+            <label for="FGM">FGM:</label>
+            <input type="text" id="FGM" name="FGM">
+        </div>
+        <div>
+            <label for="FGA">FGA:</label>
+            <input type="text" id="FGA" name="FGA">
+        </div>
+        <div>
+            <label for="FGP">FG%:</label>
+            <input type="text" id="FGP" name="FGP">
+        </div>
+        <div>
+            <label for="eFGP">eFG%:</label>
+            <input type="text" id="eFGP" name="eFGP">
+        </div>
+        <div>
+            <label for="3FGM">3FGM:</label>
+            <input type="text" id="3FGM" name="3FGM">
+        </div>
+        <div>
+            <label for="3FGA">3FGA:</label>
+            <input type="text" id="3FGA" name="3FGA">
+        </div>
+        <div>
+            <label for="3FGP">3FG%:</label>
+            <input type="text" id="3FGP" name="3FGP">
+        </div>
+        <div>
+            <label for="FTM">FTM:</label>
+            <input type="text" id="FTM" name="FTM">
+        </div>
+        <div>
+            <label for="FTA">FTA:</label>
+            <input type="text" id="FTA" name="FTA">
+        </div>
+        <div>
+            <label for="FTP">FT%:</label>
+            <input type="text" id="FTP" name="FTP">
+        </div>
+        <div>
+            <label for="3PR">3P Rate:</label>
+            <input type="text" id="3PR" name="3PR">
+        </div>
+        <div>
+            <label for="FTR">FT Rate:</label>
+            <input type="text" id="FTR" name="FTR">
+        </div>
+        <div>
+            <label for="OReb">Total OReb:</label>
+            <input type="text" id="OReb" name="OReb">
+        </div>
+        <div>
+            <label for="DReb">Total DReb:</label>
+            <input type="text" id="DReb" name="DReb">
+        </div>
+        <div>
+            <label for="TReb">Total Reb:</label>
+            <input type="text" id="TReb" name="TReb">
+        </div>
+        <div>
+            <label for="DRP">DReb%:</label>
+            <input type="text" id="DRP" name="DRP">
+        </div>
+        <div>
+            <label for="oreb_pct">Oreb%:</label>
+            <input type="text" id="oreb_pct" name="oreb_pct">
+        </div>
+        <div>
+            <label for="fouls">Fouls:</label>
+            <input type="text" id="fouls" name="fouls">
+        </div>
+        <div>
+            <label for="assists">Assists:</label>
+            <input type="text" id="assists" name="assists">
+        </div>
+        <div>
+            <label for="turnovers">Turnovers:</label>
+            <input type="text" id="turnovers" name="turnovers">
+        </div>
+        <div>
+            <label for="assist_turnover_ratio">Assist/Turnover Ratio:</label>
+            <input type="text" id="assist_turnover_ratio" name="assist_turnover_ratio">
+        </div>
+        <div>
+            <label for="steals">Steals:</label>
+            <input type="text" id="steals" name="steals">
+        </div>
+        <div>
+            <label for="blocks">Blocks:</label>
+            <input type="text" id="blocks" name="blocks">
+        </div>
+        <div>
+            <label for="points_off_turnovers">Points off Turnovers:</label>
+            <input type="text" id="points_off_turnovers" name="points_off_turnovers">
+        </div>
+        <div>
+            <label for="second_chance_points">Second Chance Points:</label>
+            <input type="text" id="second_chance_points" name="second_chance_points">
+        </div>
+        <div>
+            <label for="second_chance_points_per_oreb">Second Chance Points per OReb:</label>
+            <input type="text" id="second_chance_points_per_oreb" name="second_chance_points_per_oreb">
+        </div>
+        <div>
+            <label for="points_in_paint">Points in Paint:</label>
+            <input type="text" id="points_in_paint" name="points_in_paint">
+        </div>
+        <div>
+            <label for="points_in_paint_rate">Points in Paint Rate:</label>
+            <input type="text" id="points_in_paint_rate" name="points_in_paint_rate">
+        </div>
+        <div>
+            <label for="fast_break_points">Fast Break Points:</label>
+            <input type="text" id="fast_break_points" name="fast_break_points">
+        </div>
+        <div>
+            <label for="fast_break_points_rate">Fast Break Points Rate:</label>
+            <input type="text" id="fast_break_points_rate" name="fast_break_points_rate">
+        </div>
+        <div>
+            <label for="bench_points">Bench Points:</label>
+            <input type="text" id="bench_points" name="bench_points">
+        </div>
+        <div>
+            <label for="bench_points_rate">Bench Points Rate:</label>
+            <input type="text" id="bench_points_rate" name="bench_points_rate">
+        </div>
+      </div>
+      
+      
+      
+      <div id="Tab2" class="tabcontent">
+        <p>Opposition Stats- The stats the opponents get</p>
+        <div>
+            <label for="opposing_points">Opposition Points:</label>
+            <input type="text" id="opposing_points" name="opposing_points">
+        </div>
+        <div>
+            <label for="opposing_possessions">Oppostion Possesions:</label>
+            <input type="text" id="opposing_possessions" name="opposing_possessions">
+        </div>
+        <div>
+            <label for="opposing_FGM">Opposition FGM:</label>
+            <input type="text" id="opposing_FGM" name="opposing_FGM">
+        </div>
+        <div>
+            <label for="opposing_FGA">Opposition FGA:</label>
+            <input type="text" id="opposing_FGA" name="opposing_FGA">
+        </div>
+        <div>
+            <label for="opposing_FGP">Opposition FG%:</label>
+            <input type="text" id="opposing_FGP" name="opposing_FGP">
+        </div>
+        <div>
+            <label for="opposing_eFGP">Opposition eFG%:</label>
+            <input type="text" id="opposing_eFGP" name="opposing_eFGP">
+        </div>
+        <div>
+            <label for="opposing_3FGM">Opposition 3FGM:</label>
+            <input type="text" id="opposing_3FGM" name="opposing_3FGM">
+        </div>
+        <div>
+            <label for="opposing_3FGA">Opposition 3FGA:</label>
+            <input type="text" id="opposing_3FGA" name="opposing_3FGA">
+        </div>
+        <div>
+            <label for="opposing_3FGP">Opposition 3FG%:</label>
+            <input type="text" id="opposing_3FGP" name="opposing_3FGP">
+        </div>
+        <div>
+            <label for="opposing_FTM">Opposition FTM:</label>
+            <input type="text" id="opposing_FTM" name="opposing_FTM">
+        </div>
+        <div>
+            <label for="opposing_FTA">Opposition FTA:</label>
+            <input type="text" id="opposing_FTA" name="opposing_FTA">
+        </div>
+        <div>
+            <label for="opposing_FTP">Opposition FT%:</label>
+            <input type="text" id="opposing_FTP" name="opposing_FTP">
+        </div>
+        <div>
+            <label for="opposing_3PR">Opposition 3P Rate:</label>
+            <input type="text" id="opposing_3PR" name="opposing_3PR">
+        </div>
+        <div>
+            <label for="opposing_FTR">Opposition FT Rate:</label>
+            <input type="text" id="opposing_FTR" name="opposing_FTR">
+        </div>
+        <div>
+            <label for="opposing_OReb">Opposition Total OReb:</label>
+            <input type="text" id="opposing_OReb" name="opposing_OReb">
+        </div>
+        <div>
+            <label for="opposing_DReb">Opposition Total DReb:</label>
+            <input type="text" id="opposing_DReb" name="opposing_DReb">
+        </div>
+        <div>
+            <label for="opposing_TReb">Opposition Total Reb:</label>
+            <input type="text" id="opposing_TReb" name="opposing_TReb">
+        </div>
+        <div>
+            <label for="opposing_DRP">Opposition DReb%:</label>
+            <input type="text" id="opposing_DRP" name="opposing_DRP">
+        </div>
+        <div>
+            <label for="opposing_oreb_pct">Opposition Oreb%:</label>
+            <input type="text" id="opposing_oreb_pct" name="opposing_oreb_pct">
+        </div>
+        <div>
+            <label for="opposing_fouls">Opposition Fouls:</label>
+            <input type="text" id="opposing_fouls" name="opposing_fouls">
+        </div>
+        <div>
+            <label for="opposing_assists">Opposition Assists:</label>
+            <input type="text" id="opposing_assists" name="opposing_assists">
+        </div>
+        <div>
+            <label for="opposing_turnovers">Opposition Turnovers:</label>
+            <input type="text" id="opposing_turnovers" name="opposing_turnovers">
+        </div>
+        <div>
+            <label for="opposing_assist_turnover_ratio">Opposition Assist/Turnover Ratio:</label>
+            <input type="text" id="opposing_assist_turnover_ratio" name="opposing_assist_turnover_ratio">
+        </div>
+        <div>
+            <label for="opposing_steals">Opposition Steals:</label>
+            <input type="text" id="opposing_steals" name="opposing_steals">
+        </div>
+        <div>
+            <label for="opposing_blocks">Opposition Blocks:</label>
+            <input type="text" id="opposing_blocks" name="opposing_blocks">
+        </div>
+        <div>
+            <label for="opposing_points_off_turnovers">Opposition Points off Turnovers:</label>
+            <input type="text" id="opposing_points_off_turnovers" name="opposing_points_off_turnovers">
+        </div>
+        <div>
+            <label for="opposing_second_chance_points">Opposition Second Chance Points:</label>
+            <input type="text" id="opposing_second_chance_points" name="opposing_second_chance_points">
+        </div>
+        <div>
+            <label for="opposing_second_chance_points_per_oreb">Opposition Second Chance Points per OReb:</label>
+            <input type="text" id="opposing_second_chance_points_per_oreb" name="opposing_second_chance_points_per_oreb">
+        </div>
+        <div>
+            <label for="opposing_points_in_paint">Opposition Points in Paint:</label>
+            <input type="text" id="opposing_points_in_paint" name="opposing_points_in_paint">
+        </div>
+        <div>
+            <label for="opposing_points_in_paint_rate">Opposition Points in Paint Rate:</label>
+            <input type="text" id="opposing_points_in_paint_rate" name="opposing_points_in_paint_rate">
+        </div>
+        <div>
+            <label for="opposing_fast_break_points">Opposition Fast Break Points:</label>
+            <input type="text" id="opposing_fast_break_points" name="opposing_fast_break_points">
+        </div>
+        <div>
+            <label for="opposing_fast_break_points_rate">Opposition Fast Break Points Rate:</label>
+            <input type="text" id="opposing_fast_break_points_rate" name="opposing_fast_break_points_rate">
+        </div>
+        <div>
+            <label for="opposing_bench_points">Opposition Bench Points:</label>
+            <input type="text" id="opposing_bench_points" name="opposing_bench_points">
+        </div>
+        <div>
+            <label for="opposing_bench_points_rate">Opposition Bench Points Rate:</label>
+            <input type="text" id="opposing_bench_points_rate" name="opposing_bench_points_rate">
+        </div>
+        
+      </div>
+      
+      <div id="Tab3" class="tabcontent">
+        <p>Differential Stats- The difference between the Team Stats and the Opposition stats, they can be positve or negative</p>
+        <div>
+            <label for="possessions_diff">Possesions Differential:</label>
+            <input type="text" id="possessions_diff" name="possessions_diff">
+        </div>
+        <div>
+            <label for="FGM_diff">FGM Differential:</label>
+            <input type="text" id="FGM_diff" name="FGM_diff">
+        </div>
+        <div>
+            <label for="FGA_diff">FGA Differential:</label>
+            <input type="text" id="FGA_diff" name="FGA_diff">
+        </div>
+        <div>
+            <label for="FGP_diff">FG% Differential:</label>
+            <input type="text" id="FGP_diff" name="FGP_diff">
+        </div>
+        <div>
+            <label for="eFGP_diff">eFG% Differential:</label>
+            <input type="text" id="eFGP_diff" name="eFGP_diff">
+        </div>
+        <div>
+            <label for="3FGM_diff">3FGM Differential:</label>
+            <input type="text" id="3FGM_diff" name="3FGM_diff">
+        </div>
+        <div>
+            <label for="3FGA_diff">3FGA Differential:</label>
+            <input type="text" id="3FGA_diff" name="3FGA_diff">
+        </div>
+        <div>
+            <label for="3FGP_diff">3FG% Differential:</label>
+            <input type="text" id="3FGP_diff" name="3FGP_diff">
+        </div>
+        <div>
+            <label for="FTM_diff">FTM Differential:</label>
+            <input type="text" id="FTM_diff" name="FTM_diff">
+        </div>
+        <div>
+            <label for="FTA_diff">FTA Differential:</label>
+            <input type="text" id="FTA_diff" name="FTA_diff">
+        </div>
+        <div>
+            <label for="FTP_diff">FT% Differential:</label>
+            <input type="text" id="FTP_diff" name="FTP_diff">
+        </div>
+        <div>
+            <label for="3PR_diff">3P Rate Differential:</label>
+            <input type="text" id="3PR_diff" name="3PR_diff">
+        </div>
+        <div>
+            <label for="FTR_diff">FT Rate Differential:</label>
+            <input type="text" id="FTR_diff" name="FTR_diff">
+        </div>
+        <div>
+            <label for="OReb_diff">Total OReb Differential:</label>
+            <input type="text" id="OReb_diff" name="OReb_diff">
+        </div>
+        <div>
+            <label for="DReb_diff">Total DReb Differential:</label>
+            <input type="text" id="DReb_diff" name="DReb_diff">
+        </div>
+        <div>
+            <label for="TReb_diff">Total Reb Differential:</label>
+            <input type="text" id="TReb_diff" name="TReb_diff">
+        </div>
+        <div>
+            <label for="DRP_diff">DReb% Differential:</label>
+            <input type="text" id="DRP_diff" name="DRP_diff">
+        </div>
+        <div>
+            <label for="oreb_pct_diff">Oreb% Differential:</label>
+            <input type="text" id="oreb_pct_diff" name="oreb_pct_diff">
+        </div>
+        <div>
+            <label for="fouls_diff">Fouls Differential:</label>
+            <input type="text" id="fouls_diff" name="fouls_diff">
+        </div>
+        <div>
+            <label for="assists_diff">Assists Differential:</label>
+            <input type="text" id="assists_diff" name="assists_diff">
+        </div>
+        <div>
+            <label for="turnovers_diff">Turnovers Differential:</label>
+            <input type="text" id="turnovers_diff" name="turnovers_diff">
+        </div>
+        <div>
+            <label for="assist_turnover_ratio_diff">Assist/Turnover Ratio Differential:</label>
+            <input type="text" id="assist_turnover_ratio_diff" name="assist_turnover_ratio_diff">
+        </div>
+        <div>
+            <label for="steals_diff">Steals Differential:</label>
+            <input type="text" id="steals_diff" name="steals_diff">
+        </div>
+        <div>
+            <label for="blocks_diff">Blocks Differential:</label>
+            <input type="text" id="blocks_diff" name="blocks_diff">
+        </div>
+        <div>
+            <label for="points_off_turnovers_diff">Points off Turnovers Differential:</label>
+            <input type="text" id="points_off_turnovers_diff" name="points_off_turnovers_diff">
+        </div>
+        <div>
+            <label for="second_chance_points_diff">Second Chance Points Differential:</label>
+            <input type="text" id="second_chance_points_diff" name="second_chance_points_diff">
+        </div>
+        <div>
+            <label for="second_chance_points_per_oreb_diff">Second Chance Points per OReb Differential:</label>
+            <input type="text" id="second_chance_points_per_oreb_diff" name="second_chance_points_per_oreb_diff">
+        </div>
+        <div>
+            <label for="points_in_paint_diff">Points in Paint Differential:</label>
+            <input type="text" id="points_in_paint_diff" name="points_in_paint_diff">
+        </div>
+        <div>
+            <label for="points_in_paint_rate_diff">Points in Paint Rate Differential:</label>
+            <input type="text" id="points_in_paint_rate_diff" name="points_in_paint_rate_diff">
+        </div>
+        <div>
+            <label for="fast_break_points_diff">Fast Break Points Differential:</label>
+            <input type="text" id="fast_break_points_diff" name="fast_break_points_diff">
+        </div>
+        <div>
+            <label for="fast_break_points_rate_diff">Fast Break Points Rate Differential:</label>
+            <input type="text" id="fast_break_points_rate_diff" name="fast_break_points_rate_diff">
+        </div>
+        <div>
+            <label for="bench_points_diff">Bench Points Differential:</label>
+            <input type="text" id="bench_points_diff" name="bench_points_diff">
+        </div>
+        <div>
+            <label for="bench_points_rate_diff">Bench Points Rate Differential:</label>
+            <input type="text" id="bench_points_rate_diff" name="bench_points_rate_diff">
+        </div>
+	
+      </div>
+      <input type="submit" value="Submit">
+      </form>
+      <script>
+    document.getElementById("Tab2").style.display = "none";
+    document.getElementById("Tab3").style.display = "none";
+
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+
+        evt.preventDefault(); // Prevent form submission
+    }
+</script>
+
+      
+      
+</body>
+</html>
